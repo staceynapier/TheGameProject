@@ -6,7 +6,7 @@ package com.example.user.thegame;
 
 public class Clue {
 
-    String name;
+    private String name;
 
     public Clue(String name) {
         this.name = name;
