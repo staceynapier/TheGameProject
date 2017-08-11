@@ -27,4 +27,10 @@ public class GameTest {
         assertEquals(1, game.getList().size());
     }
 
+    @Test
+    public void canEmptyList(){
+        game.empty();
+        assertEquals(0, game.getList().size());
+    }
+
 }

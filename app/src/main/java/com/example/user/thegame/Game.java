@@ -21,4 +21,8 @@ public class Game {
     public ArrayList<Clue> getList() {
         return new ArrayList<Clue>(list);
     }
+
+    public void empty() {
+        list.clear();
+    }
 }
