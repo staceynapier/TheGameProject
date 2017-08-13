@@ -31,9 +31,9 @@ public class GameActivity extends AppCompatActivity {
     public void onCorrectButtonClicked(View button){
 
         clueOutput = (TextView)findViewById(R.id.clue_output);
+        String newClue = game.getRandomClue();
+        clueOutput.setText(newClue);
 
     }
-    game = Game();
-//    String newClue = game.getRandomClue();
-//    clueOutput.setText(newClue);
+
 }
