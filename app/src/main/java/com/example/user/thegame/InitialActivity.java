@@ -1,5 +1,6 @@
 package com.example.user.thegame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ public class InitialActivity extends AppCompatActivity {
     Button inputButton;
     Clue clue;
     Game game;
+    Button clearButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class InitialActivity extends AppCompatActivity {
 
         inputClueText = (EditText)findViewById(R.id.clue_input);
         inputButton = (Button)findViewById(R.id.inputter);
+        clearButton = (Button)findViewById(R.id.clear_button);
     }
 
     public void onInputButtonClicked(View button) {
@@ -35,10 +38,15 @@ public class InitialActivity extends AppCompatActivity {
         Log.d(newClue.getName().toString(), "added to list");
     }
 
-//    public void onClearButtonClicked(View button) {
-//        Button instruction = inputButton;
-//            instruction = game.empty();
-//        Log.d(game.getList().toString(), "list emptied");
-//    }
+    public void onClearButtonClicked(View button) {
+        Button instruction = clearButton;
+        game.empty();
+        Log.d(game.getList().toString(), "list emptied");
+    }
+
+    public void onStartGameButton(View button) {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
 
 }
