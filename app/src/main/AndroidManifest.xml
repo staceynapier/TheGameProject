@@ -16,11 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActivity"
-            android:label="@string/main_game"
-            android:parentActivityName=".InitialActivity"
-            >
-        </activity>
+        <activity android:name=".GameActivityTeam1"></activity>
+        <activity android:name=".GameActivityTeam2"></activity>
     </application>
 
 </manifest>

@@ -6,4 +6,6 @@
     <string name="correct_button">Correct</string>
     <string name="pass_button">Pass</string>
     <string name="main_game">Game</string>
+    <string name="switch_to_team1">Switch to Team One</string>
+    <string name="switch_to_team2">Switch to Team Two</string>
 </resources>

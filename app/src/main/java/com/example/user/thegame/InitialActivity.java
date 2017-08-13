@@ -10,6 +10,8 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
+import static android.R.id.list;
+
 public class InitialActivity extends AppCompatActivity {
 
     EditText inputClueText;
@@ -28,25 +30,30 @@ public class InitialActivity extends AppCompatActivity {
         clearButton = (Button)findViewById(R.id.clear_button);
     }
 
-    public void onClick(View button) {
+//    @Override
+    public void onAddButtonClicked(View button) {
         inputClueText.setText("");
         Log.d(getClass().toString(), "onInputButtonClicked was called");
-        String clue = inputClueText.getText().toString();
-        Clue newClue = new Clue(clue);
-        game = new Game();
-        game.addClue(newClue);
 
-        Log.d(newClue.getName().toString(), "added to list");
+        String newClue = inputClueText.getText().toString();
+        clue = new Clue(newClue);
+        // loop?
+        game = new Game();
+        game.addClue(clue);
+
+        // isn't returning the string...
+        Log.d(clue.getName(), "added to list");
+        Log.d(game.getLength().toString(), "full list");
     }
 
     public void onClearButtonClicked(View button) {
         Button instruction = clearButton;
         game.empty();
-        Log.d(game.getList().toString(), "list emptied");
+        Log.d(game.getLength().toString(), "list emptied");
     }
 
     public void onStartGameButton(View button) {
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, GameActivityTeam1.class);
         startActivity(intent);
     }
 

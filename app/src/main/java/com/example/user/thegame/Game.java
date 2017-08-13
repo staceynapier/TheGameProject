@@ -38,7 +38,7 @@ public class Game {
         return clue.getName();
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return list.size();
     }
 
