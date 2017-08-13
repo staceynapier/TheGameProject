@@ -29,11 +29,18 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void onCorrectButtonClicked(View button){
-
         clueOutput = (TextView)findViewById(R.id.clue_output);
         String newClue = game.getRandomClue();
         clueOutput.setText(newClue);
+        ArrayList<Clue> list = new ArrayList<Clue>();
+        Clue clue = new Clue(newClue);
+        list.add(clue);
+    }
 
+    public void onPassButtonClicked(View button){
+        clueOutput = (TextView)findViewById(R.id.clue_output);
+        String newClue = game.getRandomClue();
+        clueOutput.setText(newClue);
     }
 
 }
