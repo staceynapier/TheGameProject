@@ -28,7 +28,8 @@ public class InitialActivity extends AppCompatActivity {
         clearButton = (Button)findViewById(R.id.clear_button);
     }
 
-    public void onInputButtonClicked(View button) {
+    public void onClick(View button) {
+        inputClueText.setText("");
         Log.d(getClass().toString(), "onInputButtonClicked was called");
         String clue = inputClueText.getText().toString();
         Clue newClue = new Clue(clue);
