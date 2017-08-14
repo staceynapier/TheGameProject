@@ -13,7 +13,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="onSwitchToTeamOneButton"
-        android:text="@string/switch_to_team2"
+        android:text="@string/switch_to_team1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -18,7 +18,12 @@ public class Team {
         return name;
     }
 
-    public int getScore() {
-        return score;
+    public String getScore() {
+        return score.toString();
+    }
+
+    public int addToScore(int i) {
+        Integer newScore = this.score += i;
+        return newScore;
     }
 }

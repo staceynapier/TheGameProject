@@ -20,7 +20,10 @@
             android:parentActivityName=".InitialActivity"
             android:label="@string/team1"
             ></activity>
-        <activity android:name=".GameActivityTeam2"></activity>
+        <activity android:name=".GameActivityTeam2"
+            android:parentActivityName=".InitialActivity"
+            android:label="@string/team2"
+            ></activity>
 
     </application>
 

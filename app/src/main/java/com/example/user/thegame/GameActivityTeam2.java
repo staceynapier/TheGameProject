@@ -3,6 +3,7 @@ package com.example.user.thegame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,11 +19,16 @@ public class GameActivityTeam2 extends AppCompatActivity {
     Button passButton;
     Clue clue;
     Button switchToOne;
+    Team team2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_team1);
+        setContentView(R.layout.activity_game_team2);
+
+        game = (Game) getIntent().getSerializableExtra("game");
+        team2 = new Team("Team2");
 
         correctButton = (Button)findViewById(R.id.correct_button);
         passButton = (Button)findViewById(R.id.pass_button);
@@ -33,9 +39,12 @@ public class GameActivityTeam2 extends AppCompatActivity {
         clueOutput = (TextView)findViewById(R.id.clue_output);
         String newClue = game.getRandomClue();
         clueOutput.setText(newClue);
-        clue = new Clue(newClue);
-        new ArrayList<Clue> ();
-        list.add(clue);
+
+        if (game.getLength() == 0) {
+            clueOutput.setText("Round finished");
+        }
+        team2.addToScore(1);
+        Log.d("Score is", team2.getScore());
     }
 
     public void onPassButtonClicked(View button){

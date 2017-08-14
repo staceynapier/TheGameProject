@@ -27,4 +27,10 @@ public class TeamTest {
     public void hasTeamScore(){
         assertEquals(0, team.getScore());
     }
+
+    @Test
+    public void canAddToScore(){
+        team.addToScore(1);
+        assertEquals("1", team.getScore());
+    }
 }
