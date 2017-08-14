@@ -33,8 +33,12 @@ public class GameActivityTeam1 extends AppCompatActivity {
 
     public void onCorrectButtonClicked(View button) {
         clueOutput = (TextView) findViewById(R.id.clue_output);
-        String newClue = game.getRandomClue();
+        String newClue = game.getRandomClueAndRemove();
         clueOutput.setText(newClue);
+
+        if (game.getLength() == 0) {
+            clueOutput.setText("Round finished");
+        }
 //        clue = new Clue(newClue);
 //        newList = new ArrayList<Clue>();
 //        newList.add(clue);

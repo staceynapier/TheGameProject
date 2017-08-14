@@ -31,6 +31,15 @@ public class Game implements Serializable{
         return list.get(index);
     }
 
+    public String getRandomClueAndRemove() {
+        Random rand = new Random();
+        int listSize = getLength();
+        int index  = rand.nextInt(listSize);
+        Clue clue = getAnswerAtIndex(index);
+        list.remove(index);
+        return clue.getName();
+    }
+
     public String getRandomClue() {
         Random rand = new Random();
         int listSize = getLength();
@@ -46,5 +55,6 @@ public class Game implements Serializable{
     public void empty() {
         list.clear();
     }
+
 
 }
