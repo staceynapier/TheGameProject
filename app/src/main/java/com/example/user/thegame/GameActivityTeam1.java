@@ -24,28 +24,21 @@ public class GameActivityTeam1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_team1);
 
+        game = (Game) getIntent().getSerializableExtra("game");
+
         correctButton = (Button) findViewById(R.id.correct_button);
         passButton = (Button) findViewById(R.id.pass_button);
         switchToTwo = (Button)findViewById(R.id.switch_to_two);
-
-        correctButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View button) {
-                clueOutput = (TextView) findViewById(R.id.clue_output);
-                String newClue = game.getRandomClue();
-                clueOutput.setText(newClue);
-            }
-        });
     }
 
-//    public void onCorrectButtonClicked(View button) {
-//        clueOutput = (TextView) findViewById(R.id.clue_output);
-//        String newClue = game.getRandomClue();
-//        clueOutput.setText(newClue);
-////        clue = new Clue(newClue);
-////        new ArrayList<Clue>();
-////        newList.add(clue);
-//    }
+    public void onCorrectButtonClicked(View button) {
+        clueOutput = (TextView) findViewById(R.id.clue_output);
+        String newClue = game.getRandomClue();
+        clueOutput.setText(newClue);
+//        clue = new Clue(newClue);
+//        newList = new ArrayList<Clue>();
+//        newList.add(clue);
+    }
 
 
     public void onPassButtonClicked(View button) {

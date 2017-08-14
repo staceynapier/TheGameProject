@@ -2,6 +2,7 @@ package com.example.user.thegame;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,7 +10,7 @@ import java.util.Random;
  * Created by user on 10/08/2017.
  */
 
-public class Game {
+public class Game implements Serializable{
 
     private ArrayList<Clue> list;
     private Random random = new Random();

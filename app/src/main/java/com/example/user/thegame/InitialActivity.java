@@ -34,14 +34,15 @@ public class InitialActivity extends AppCompatActivity {
         inputButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View button) {
-                inputClueText.setText("");
+
                 Log.d(getClass().toString(), "onInputButtonClicked was called");
 
                 String newClue = inputClueText.getText().toString();
                 clue = new Clue(newClue);
-
                 game.addClue(clue);
-                Log.d(clue.getName(), "was added to list");
+
+                inputClueText.setText("");
+                Log.d( "Clue was added to list:", clue.getName());
                 Log.d(game.getLength().toString(), "length of list");
             }
         });
@@ -56,9 +57,8 @@ public class InitialActivity extends AppCompatActivity {
     }
 
     public void onStartGameButton(View button) {
-//        clues = game.getList();
-//        for
         Intent intent = new Intent(this, GameActivityTeam1.class);
+        intent.putExtra("game", game);
         startActivity(intent);
     }
 

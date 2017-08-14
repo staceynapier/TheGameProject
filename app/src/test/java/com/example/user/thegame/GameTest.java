@@ -36,7 +36,7 @@ public class GameTest {
 
     @Test
     public void testLength(){
-        assertEquals(3, game.getLength());
+        assertEquals((Integer)3, game.getLength());
     }
 
     @Test
