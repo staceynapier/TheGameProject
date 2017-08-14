@@ -10,8 +10,6 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
-import static android.R.id.list;
-
 public class InitialActivity extends AppCompatActivity {
 
     EditText inputClueText;
@@ -19,6 +17,7 @@ public class InitialActivity extends AppCompatActivity {
     Clue clue;
     Game game;
     Button clearButton;
+    Button startGameButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +27,27 @@ public class InitialActivity extends AppCompatActivity {
         inputClueText = (EditText)findViewById(R.id.clue_input);
         inputButton = (Button)findViewById(R.id.inputter);
         clearButton = (Button)findViewById(R.id.clear_button);
-    }
+        startGameButton = (Button)findViewById(R.id.start_game_button);
 
-//    @Override
-    public void onAddButtonClicked(View button) {
-        inputClueText.setText("");
-        Log.d(getClass().toString(), "onInputButtonClicked was called");
-
-        String newClue = inputClueText.getText().toString();
-        clue = new Clue(newClue);
-        // loop?
         game = new Game();
-        game.addClue(clue);
 
-        // isn't returning the string...
-        Log.d(clue.getName(), "added to list");
-        Log.d(game.getLength().toString(), "full list");
+        inputButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View button) {
+                inputClueText.setText("");
+                Log.d(getClass().toString(), "onInputButtonClicked was called");
+
+                String newClue = inputClueText.getText().toString();
+                clue = new Clue(newClue);
+
+                game.addClue(clue);
+                Log.d(clue.getName(), "was added to list");
+                Log.d(game.getLength().toString(), "length of list");
+            }
+        });
+
     }
+
 
     public void onClearButtonClicked(View button) {
         Button instruction = clearButton;
@@ -53,6 +56,8 @@ public class InitialActivity extends AppCompatActivity {
     }
 
     public void onStartGameButton(View button) {
+//        clues = game.getList();
+//        for
         Intent intent = new Intent(this, GameActivityTeam1.class);
         startActivity(intent);
     }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class GameActivityTeam1 extends AppCompatActivity {
 
     TextView clueOutput;
-    ArrayList<Clue> list;
+    ArrayList<Clue> newList;
     Game game;
     Button correctButton;
     Button passButton;
@@ -28,16 +28,25 @@ public class GameActivityTeam1 extends AppCompatActivity {
         passButton = (Button) findViewById(R.id.pass_button);
         switchToTwo = (Button)findViewById(R.id.switch_to_two);
 
+        correctButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View button) {
+                clueOutput = (TextView) findViewById(R.id.clue_output);
+                String newClue = game.getRandomClue();
+                clueOutput.setText(newClue);
+            }
+        });
     }
 
-    public void onCorrectButtonClicked(View button) {
-        clueOutput = (TextView) findViewById(R.id.clue_output);
-        String newClue = game.getRandomClue();
-        clueOutput.setText(newClue);
-        clue = new Clue(newClue);
-        new ArrayList<Clue>();
-        list.add(clue);
-    }
+//    public void onCorrectButtonClicked(View button) {
+//        clueOutput = (TextView) findViewById(R.id.clue_output);
+//        String newClue = game.getRandomClue();
+//        clueOutput.setText(newClue);
+////        clue = new Clue(newClue);
+////        new ArrayList<Clue>();
+////        newList.add(clue);
+//    }
+
 
     public void onPassButtonClicked(View button) {
         clueOutput = (TextView) findViewById(R.id.clue_output);
