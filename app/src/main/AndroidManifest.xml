@@ -24,7 +24,11 @@
             android:name=".GameActivityTeam2"
             android:label="@string/team2"
             android:parentActivityName=".InitialActivity" />
-        <activity android:name=".ScorecardActivity"></activity>
+        <activity android:name=".ScorecardActivity"
+            android:label="@string/scorecard"
+            android:parentActivityName=".InitialActivity"></activity>
+
+
     </application>
 
 </manifest>
