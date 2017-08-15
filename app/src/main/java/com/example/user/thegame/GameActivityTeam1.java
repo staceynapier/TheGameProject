@@ -19,9 +19,7 @@ public class GameActivityTeam1 extends AppCompatActivity {
     Button correctButton;
     Button passButton;
     Button switchToTwo;
-    Button start;
     Button stop;
-    Clue clue;
     Team team1;
     Team team2;
     private TextView countText;
@@ -40,7 +38,6 @@ public class GameActivityTeam1 extends AppCompatActivity {
         correctButton = (Button)findViewById(R.id.correct_button);
         passButton = (Button)findViewById(R.id.pass_button);
         switchToTwo = (Button)findViewById(R.id.switch_to_two);
-        start = (Button)findViewById(R.id.start);
         stop = (Button)findViewById(R.id.stop);
         countText = (TextView)findViewById(R.id.countdown_text);
 
@@ -50,6 +47,21 @@ public class GameActivityTeam1 extends AppCompatActivity {
         clueOutput = (TextView)findViewById(R.id.clue_output);
         String newClue = game.getRandomClueAndRemove();
         clueOutput.setText(newClue);
+
+        countDownTimer = new CountDownTimer(30 * 1000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                countText.setText("" + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                countText.setText("Done!");
+            }
+        };
+        countDownTimer.start();
+    }
+
+    public void onStopButtonClicked(View button) {
+        countDownTimer.cancel();
     }
 
     public void onCorrectButtonClicked(View button) {
@@ -58,7 +70,8 @@ public class GameActivityTeam1 extends AppCompatActivity {
         clueOutput.setText(newClue);
 
         if (game.getLength() == 0) {
-            clueOutput.setText("Round finished");
+            clueOutput.setText("Round finished!!!");
+            countDownTimer.cancel();
         }
         team1.addToScore(1);
         Log.d("Score is", team1.getScore());
@@ -91,20 +104,4 @@ public class GameActivityTeam1 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onStartButtonClicked(View button) {
-        countDownTimer = new CountDownTimer(60 * 1000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                countText.setText("" + millisUntilFinished / 1000);
-            }
-
-            public void onFinish() {
-                countText.setText("Done !");
-            }
-        };
-        countDownTimer.start();
-    }
-
-    public void onStopButtonClicked(View button) {
-        countDownTimer.cancel();
-    }
 }
