@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class GameActivityTeam1 extends AppCompatActivity {
 
     TextView clueOutput;
-    ArrayList<Clue> newList;
     Game game;
     Button correctButton;
     Button passButton;
     Button switchToTwo;
     Clue clue;
     Team team1;
+    Team team2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +28,16 @@ public class GameActivityTeam1 extends AppCompatActivity {
 
         game = (Game) getIntent().getSerializableExtra("game");
         team1 = new Team("Team1");
+        team2 = new Team("Team2");
 
-        correctButton = (Button) findViewById(R.id.correct_button);
-        passButton = (Button) findViewById(R.id.pass_button);
+
+        correctButton = (Button)findViewById(R.id.correct_button);
+        passButton = (Button)findViewById(R.id.pass_button);
         switchToTwo = (Button)findViewById(R.id.switch_to_two);
     }
 
     public void onCorrectButtonClicked(View button) {
-        clueOutput = (TextView) findViewById(R.id.clue_output);
+        clueOutput = (TextView)findViewById(R.id.clue_output);
         String newClue = game.getRandomClueAndRemove();
         clueOutput.setText(newClue);
 
@@ -43,12 +45,8 @@ public class GameActivityTeam1 extends AppCompatActivity {
             clueOutput.setText("Round finished");
         }
         team1.addToScore(1);
-        Log.d("Score is", team1.getScore().toString());
-//        clue = new Clue(newClue);
-//        newList = new ArrayList<Clue>();
-//        newList.add(clue);
+        Log.d("Score is", team1.getScore());
     }
-
 
     public void onPassButtonClicked(View button) {
         clueOutput = (TextView) findViewById(R.id.clue_output);
@@ -59,8 +57,21 @@ public class GameActivityTeam1 extends AppCompatActivity {
     public void onSwitchToTeamTwoButton(View button) {
         Log.d("Button clicked", team1.getScore());
         Intent intent = new Intent(this, GameActivityTeam2.class);
-        intent.putExtra("game", game);
+        Bundle extras = new Bundle();
+        extras.putSerializable("game", game);
+        extras.putSerializable("team1", team1);
+        extras.putSerializable("team2", team2);
+        intent.putExtras(extras);
         startActivity(intent);
     }
 
+    public void onScorecardButtonClicked(View button) {
+        Intent intent = new Intent(this, ScorecardActivity.class);
+        Bundle extras = new Bundle();
+        extras.putSerializable("game", game);
+        extras.putSerializable("team1", team1);
+        extras.putSerializable("team2", team2);
+        intent.putExtras(extras);
+        startActivity(intent);
+    }
 }

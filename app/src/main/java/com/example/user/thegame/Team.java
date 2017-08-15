@@ -1,10 +1,12 @@
 package com.example.user.thegame;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 12/08/2017.
  */
 
-public class Team {
+public class Team implements Serializable{
 
     private String name;
     private Integer score;

@@ -16,15 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActivityTeam1"
-            android:parentActivityName=".InitialActivity"
+        <activity
+            android:name=".GameActivityTeam1"
             android:label="@string/team1"
-            ></activity>
-        <activity android:name=".GameActivityTeam2"
-            android:parentActivityName=".InitialActivity"
+            android:parentActivityName=".InitialActivity" />
+        <activity
+            android:name=".GameActivityTeam2"
             android:label="@string/team2"
-            ></activity>
-
+            android:parentActivityName=".InitialActivity" />
+        <activity android:name=".ScorecardActivity"></activity>
     </application>
 
 </manifest>

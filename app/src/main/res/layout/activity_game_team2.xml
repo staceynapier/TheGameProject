@@ -7,6 +7,17 @@
     tools:context="com.example.user.thegame.GameActivityTeam1">
 
     <Button
+        android:id="@+id/scorecard_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onScorecardButtonClicked"
+        android:text="@string/scorecard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/switch_to_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
