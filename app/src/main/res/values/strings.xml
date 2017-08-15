@@ -12,4 +12,6 @@
     <string name="team2">Team Two</string>
     <string name="scorecard">Scorecard</string>
     <string name="calculate_scores">Calculate Scores</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
 </resources>

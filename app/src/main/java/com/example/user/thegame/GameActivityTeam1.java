@@ -2,6 +2,7 @@ package com.example.user.thegame;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,9 +18,13 @@ public class GameActivityTeam1 extends AppCompatActivity {
     Button correctButton;
     Button passButton;
     Button switchToTwo;
+    Button start;
+    Button stop;
     Clue clue;
     Team team1;
     Team team2;
+    private TextView countText;
+    private CountDownTimer countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,10 @@ public class GameActivityTeam1 extends AppCompatActivity {
         correctButton = (Button)findViewById(R.id.correct_button);
         passButton = (Button)findViewById(R.id.pass_button);
         switchToTwo = (Button)findViewById(R.id.switch_to_two);
+        start = (Button)findViewById(R.id.start);
+        stop = (Button)findViewById(R.id.stop);
+        countText = (TextView)findViewById(R.id.countdown_text);
+
     }
 
     public void onCorrectButtonClicked(View button) {
@@ -73,5 +82,22 @@ public class GameActivityTeam1 extends AppCompatActivity {
         extras.putSerializable("team2", team2);
         intent.putExtras(extras);
         startActivity(intent);
+    }
+
+    public void onStartButtonClicked(View button) {
+        countDownTimer = new CountDownTimer(60 * 1000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                countText.setText("" + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                countText.setText("Done !");
+            }
+        };
+        countDownTimer.start();
+    }
+
+    public void onStopButtonClicked(View button) {
+        countDownTimer.cancel();
     }
 }
