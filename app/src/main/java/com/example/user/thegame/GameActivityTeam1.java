@@ -45,8 +45,9 @@ public class GameActivityTeam1 extends AppCompatActivity {
 
     public void onStartRoundButtonClicked(View button) {
         clueOutput = (TextView)findViewById(R.id.clue_output);
-        String newClue = game.getRandomClueAndRemove();
+        String newClue = game.getRandomClue();
         clueOutput.setText(newClue);
+        game.removeClue(newClue);
 
         countDownTimer = new CountDownTimer(30 * 1000, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -66,13 +67,16 @@ public class GameActivityTeam1 extends AppCompatActivity {
 
     public void onCorrectButtonClicked(View button) {
         clueOutput = (TextView)findViewById(R.id.clue_output);
-        String newClue = game.getRandomClueAndRemove();
+        String newClue = game.getRandomClue();
         clueOutput.setText(newClue);
 
-        if (game.getLength() == 0) {
+        if (game.getLength() == 0 ) {
             clueOutput.setText("Round finished!!!");
             countDownTimer.cancel();
         }
+
+        game.removeClue(newClue);
+
         team1.addToScore(1);
         Log.d("Score is", team1.getScore());
     }
