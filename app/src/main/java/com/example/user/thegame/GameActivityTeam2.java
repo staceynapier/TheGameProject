@@ -46,6 +46,12 @@ public class GameActivityTeam2 extends AppCompatActivity {
 
     }
 
+    public void onStartRoundButtonClicked(View button) {
+        clueOutput = (TextView)findViewById(R.id.clue_output);
+        String newClue = game.getRandomClueAndRemove();
+        clueOutput.setText(newClue);
+    }
+
     public void onCorrectButtonClicked(View button){
         clueOutput = (TextView)findViewById(R.id.clue_output);
         String newClue = game.getRandomClueAndRemove();
