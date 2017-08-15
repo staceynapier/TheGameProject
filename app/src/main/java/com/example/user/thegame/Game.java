@@ -31,16 +31,17 @@ public class Game implements Serializable{
         return list.get(index);
     }
 
-    public String getRandomClue() {
+    public Clue getRandomClue() {
         Random rand = new Random();
         int listSize = getLength();
         int index  = rand.nextInt(listSize);
-        Clue clue = getAnswerAtIndex(index);
-        return clue.getName();
+        return getAnswerAtIndex(index);
     }
 
-    public void removeClue(String string){
-        this.list.remove(list.indexOf(string));
+    public void removeClue(Clue clue){
+//        list.indexOf(string);
+        int i = list.indexOf(clue);
+        list.remove(i);
     }
 
     public Integer getLength() {

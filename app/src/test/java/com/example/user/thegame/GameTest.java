@@ -56,5 +56,16 @@ public class GameTest {
         assertNotNull(game.getRandomClue());
     }
 
-
+    @Test
+    public void canRemoveAtIndex() {
+        Clue clue = new Clue("Donald Trump");
+        Clue clue1 = new Clue("Theresa May");
+        Clue clue2 = new Clue("Kim Jong Un");
+        game = new Game();
+        game.addClue(clue);
+        game.addClue(clue1);
+        game.addClue(clue2);
+        game.removeClue(clue2);
+        assertEquals((Integer)2, game.getLength());
+    }
 }
