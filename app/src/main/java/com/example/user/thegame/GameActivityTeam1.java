@@ -49,7 +49,7 @@ public class GameActivityTeam1 extends AppCompatActivity {
         String stringClue = newClue.getName();
         clueOutput.setText(stringClue);
 
-        countDownTimer = new CountDownTimer(30 * 1000, 1000) {
+        countDownTimer = new CountDownTimer(5 * 1000, 1000) {
             public void onTick(long millisUntilFinished) {
                 countText.setText("" + millisUntilFinished / 1000);
             }
