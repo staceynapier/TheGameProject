@@ -4,22 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.thegame.ScorecardActivity">
+    tools:context="com.example.user.thegame.ScorecardActivity"
+    android:background="@drawable/chalkboard"
+    >
 
     <EditText
         android:id="@+id/score_title_1"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="68dp"
+        android:allowUndo="false"
+        android:contextClickable="false"
+        android:cursorVisible="false"
+        android:defaultFocusHighlightEnabled="false"
+        android:editable="false"
         android:ems="10"
         android:inputType="none"
         android:keyboardNavigationCluster="false"
         android:text="@string/team1"
         android:textAlignment="center"
+        android:textColor="@android:color/background_light"
         android:textIsSelectable="false"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -35,11 +44,17 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
+        android:allowUndo="false"
+        android:contextClickable="false"
+        android:cursorVisible="false"
+        android:defaultFocusHighlightEnabled="false"
+        android:editable="false"
         android:ems="10"
         android:inputType="none"
         android:keyboardNavigationCluster="false"
         android:text="@string/team2"
         android:textAlignment="center"
+        android:textColor="@android:color/background_light"
         android:textIsSelectable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.892"
@@ -56,10 +71,12 @@
         android:layout_marginLeft="165dp"
         android:layout_marginTop="8dp"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textColor="@android:color/background_light"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457" />
 
     <TextView
         android:id="@+id/team_2_scores"
@@ -70,13 +87,14 @@
         android:layout_marginRight="165dp"
         android:layout_marginTop="8dp"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textColor="@android:color/background_light"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/team_1_scores"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.457" />
 
     <Button
         android:id="@+id/calculate_scores_button"
