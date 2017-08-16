@@ -2,7 +2,7 @@
     <string name="app_name">The Game</string>
     <string name="input_button">Add</string>
     <string name="clear_button">Clear Clues</string>
-    <string name="start_game_button">Finished Adding</string>
+    <string name="start_game_button">Finished</string>
     <string name="correct_button">Correct</string>
     <string name="pass_button">Pass</string>
     <string name="main_game">Game</string>
