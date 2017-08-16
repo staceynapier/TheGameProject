@@ -19,6 +19,7 @@
         android:hint="Enter new clue here..."
         android:inputType="textPersonName"
         android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -16,4 +16,19 @@
     <string name="stop">Stop</string>
     <string name="start_round">Start Round</string>
     <string name="round_finished">Round finished!!</string>
+    <string name="rules">"Welcome to The Game \n"
+    "The object of The Game is to guess the most names described by your team members"\n\n
+        "Split the group into two teams." \n\n
+        "Each player should enter at least four names into the game.  These can be any names from famous people to family members as long as they are known to the whole group."\n\n
+        "When ready, choose one member of the team to describe the names (no rhyming or ‘sounds like’ allowed)."\n\n
+        "Start Game is then pressed and the timer begins."\n\n
+        "Guessing by the remaining team members should begin."\n\n
+        "If the team cannot guess the name, the ‘Pass’ button can be pressed.  "\n\n
+        "If correctly guessed, press ‘Correct’ and a new name will be presented.  "\n\n
+        "Once the timer is up, pass to Team Two and repeat.  "\n\n
+        "The game is complete when all of the names have been correctly guessed."\n\n
+        "The Scorecard will present the scores for each team at the end of the game.  "\n\n</string>
+    <string name="enter">Enter</string>
+    <string name="play_again">Play Again</string>
+
 </resources>

@@ -1,8 +1,10 @@
 package com.example.user.thegame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ScorecardActivity extends AppCompatActivity {
@@ -12,6 +14,7 @@ public class ScorecardActivity extends AppCompatActivity {
     Team team1;
     Team team2;
     Game game;
+    Button restart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,7 @@ public class ScorecardActivity extends AppCompatActivity {
 
         team1Scores = (TextView)findViewById(R.id.team_1_scores);
         team2Scores = (TextView)findViewById(R.id.team_2_scores);
-
+        restart = (Button)findViewById(R.id.restart_button);
 
     }
 
@@ -36,5 +39,10 @@ public class ScorecardActivity extends AppCompatActivity {
 
         String t2 = team2.getScore();
         team2Scores.setText(t2);
+    }
+
+    public void onRestartButtonClicked(View button) {
+        Intent intent = new Intent(this, InitialActivity.class);
+        startActivity(intent);
     }
 }
